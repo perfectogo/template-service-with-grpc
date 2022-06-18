@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package todo;
+option go_package="genproto/todo";
+
+import "message.proto";
+
+
+service TodoService {
+    rpc Create(Todo) returns (Todo);
+    rpc Get(ByIdReq) returns (Todo);
+    rpc List(ListReq) returns (ListResp);
+    rpc Update(Todo) returns (Todo);
+    rpc Delete(ByIdReq) returns (Empty);
+    rpc ListOverdue(ListTime) returns (ListResp);
+}
+
